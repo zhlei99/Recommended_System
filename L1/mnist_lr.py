@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 使用SVM进行MNIST手写数字分类
+# 使用LR进行MNIST手写数字分类
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
 from sklearn.metrics import accuracy_score
@@ -33,4 +33,4 @@ test_ss_x = ss.transform(test_x)
 lr = LogisticRegression()
 lr.fit(train_ss_x, train_y)
 predict_y=lr.predict(test_ss_x)
-print('SVM准确率: %0.4lf' % accuracy_score(predict_y, test_y))
+print('LR准确率: %0.4lf' % accuracy_score(predict_y, test_y))
