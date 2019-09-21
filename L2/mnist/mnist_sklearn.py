@@ -7,7 +7,7 @@ from sklearn.datasets import load_digits
 from sklearn import svm #SVM
 from sklearn.linear_model import LogisticRegression #逻辑回归
 from sklearn.tree import DecisionTreeClassifier #决策树
-from sklearn.naive_bayes import GaussianNB #高斯朴素贝叶斯 GaussianNB/MultinomialNB/BernoulliNB
+from sklearn.naive_bayes import BernoulliNB #高斯朴素贝叶斯 GaussianNB/MultinomialNB/BernoulliNB
 from sklearn.neighbors import KNeighborsClassifier #KNN
 from sklearn.ensemble import  AdaBoostClassifier #AdaBoost
 from xgboost import XGBClassifier #XGBoost
@@ -57,10 +57,10 @@ predict_y=model.predict(test_ss_x)
 print('LDA准确率: %0.4lf' %accuracy_score(predict_y,test_y))
 
 # 创建贝叶斯分类器
-model = GaussianNB()
+model = BernoulliNB()
 model.fit(train_ss_x,train_y)
 predict_y=model.predict(test_ss_x)
-print('朴素贝叶斯准确率: %0.4lf' %accuracy_score(predict_y,test_y))
+print('BernoulliNB准确率: %0.4lf' %accuracy_score(predict_y,test_y))
 
 # 创建SVM分类器
 model = svm.SVC(kernel='rbf', C=1.0, gamma='auto')
