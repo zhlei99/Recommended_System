@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 使用SVM进行MNIST手写数字分类
+# 使用LR进行MNIST手写数字分类
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
 from sklearn.metrics import accuracy_score
