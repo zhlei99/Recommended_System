@@ -5,7 +5,8 @@ import time
 from selenium import webdriver
 import pandas as pd
 
-driver = webdriver.Chrome()
+chrome_driver = r"C:\Python37\Lib\site-packages\selenium\webdriver\chrome\chromedriver.exe"
+driver = webdriver.Chrome(executable_path=chrome_driver)
 # 设置想要下载的导演 数据集
 director = u'徐峥'
 base_url = 'https://movie.douban.com/subject_search?search_text='+director+'&cat=1002&start='
