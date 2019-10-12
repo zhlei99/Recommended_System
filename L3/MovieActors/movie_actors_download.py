@@ -5,7 +5,14 @@ import time
 from selenium import webdriver
 import pandas as pd
 
-driver = webdriver.Chrome()
+"""
+这里我们需要使用ChromeDrvier来做模拟
+Step1，打开谷歌浏览器， 在地址栏输入 chrome://version/  查看版本信息
+Step2，ChromeDriver版本下载地址：http://chromedriver.storage.googleapis.com/index.html
+Step3，放到Python\Lib\site-packages相应路径
+"""
+chrome_driver = r"C:\Python37\Lib\site-packages\selenium\webdriver\chrome\chromedriver.exe"
+driver = webdriver.Chrome(executable_path=chrome_driver)
 # 设置想要下载的导演 数据集
 director = u'徐峥'
 base_url = 'https://movie.douban.com/subject_search?search_text='+director+'&cat=1002&start='
