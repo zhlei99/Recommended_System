@@ -1,6 +1,6 @@
 import pandas as pd
 train=pd.read_csv('train.csv',index_col=0)
-test=pd.read_csv('test.csv',index_col=0)
+test=test1=pd.read_csv('test.csv',index_col=0)
 
 #print(train['Attrition'].value_counts())
 # 处理Attrition字段
@@ -43,25 +43,21 @@ model = SVC(kernel='rbf',
 			cache_size=50000
 		   )
 #print(X_train)
-print(y_train)
-print(sum(y_train))
+#print(y_train)
+#print(sum(y_train))
 
-"""
 model = LinearSVC(
-	#kernel='rbf', 
-			#gamma="auto",
 			max_iter=1000,
 			random_state=33,
 			verbose=True,
-			#cache_size=5000
 		   )
-"""
 model.fit(X_train, y_train)
 predict = model.predict(test)
 print(predict)
+#print(test)
 #predict = model.predict_proba(test)[:, 1]
-test['Attrition']=predict
+test1['Attrition']=predict
 
 # 转化为二分类输出
 #test['Attrition']=test['Attrition'].map(lambda x:1 if x>=0.5 else 0)
-test[['Attrition']].to_csv('submit_svc.csv')
+test1[['Attrition']].to_csv('submit_svc.csv')
